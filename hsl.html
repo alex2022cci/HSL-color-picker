@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roue de couleurs</title>
+    <style>
+        .color-wheel{
+            background-image: url(/hsl-color-wheel.png);
+            min-height: 640px;
+            background-repeat: no-repeat;
+
+        }
+        .color {
+            --hue: 200;
+            --saturation: 100%;
+            --lightness: 50%;
+            width: 100%;
+            height: 200px;
+            background-color: hsl(var(--hue), var(--saturation), var(--lightness));
+        }
+
+        .color:hover {
+            --lightness: 30%;
+        }
+
+        .row-item{
+            --saturation: 100%;
+            --lightness:  50%;
+            color: lightgrey;
+
+            width: 10%;
+            height: 150px;
+            align-content:center;
+        }
+
+        .row{
+            display: flex ;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="color"></div>
+    <p></p>
+    <p></p>
+
+    <!--HUE = TEINTE // LIGHT = éclairage 0% == 'NOIR' ET 100% == 'BLANC'-->
+    <h2>HUE</h2>
+    <div class="color-wheel-container">
+        <div class="color-wheel"></div>
+    </div>
+
+    <h2>Saturation</h2>
+        <div class="row">
+            <div class="row-item" style="background-color:hsl(0, 0%,  var(--lightness));">  0%</div>
+            <div class="row-item" style="background-color:hsl(0, 20%, var(--lightness));"> 20%</div>
+            <div class="row-item" style="background-color:hsl(0, 40%, var(--lightness));"> 40%</div>
+            <div class="row-item" style="background-color:hsl(0, 50%, var(--lightness));"> 50%</div>
+            <div class="row-item" style="background-color:hsl(0, 60%, var(--lightness));"> 60%</div>
+            <div class="row-item" style="background-color:hsl(0, 80%, var(--lightness));"> 80%</div>
+            <div class="row-item" style="background-color:hsl(0, 100%,var(--lightness));">100%</div>
+        </div>
+
+        <h2>Lightness</h2>
+        <div class="row">
+            <div class="row-item" style="background-color:hsl(0, var(--saturation) , 0%);">  0%</div>
+            <div class="row-item" style="background-color:hsl(0, var(--saturation) , 20%);"> 20%</div>
+            <div class="row-item" style="background-color:hsl(0, var(--saturation) , 40%);"> 40%</div>
+            <div class="row-item" style="background-color:hsl(0, var(--saturation) , 50%);"> 50%</div>
+            <div class="row-item" style="background-color:hsl(0, var(--saturation) , 60%);"> 60%</div>
+            <div class="row-item" style="background-color:hsl(0, var(--saturation) , 80%);"> 80%</div>
+            <div class="row-item" style="background-color:hsl(0, var(--saturation) , 100%);">100%</div>
+        </div>
+
+
+</body>
+
+</html>
